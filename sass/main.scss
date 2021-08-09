@@ -1,0 +1,47 @@
+@import "mixin";
+@import "var";
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+
+
+// 1: operators
+// 2: variables
+// 3: nesting
+// 4: mixin
+// 5: Parameters
+// 6: partials
+
+.main_header{
+    @include flexpro;
+    width:100vw;
+    height:100vh;
+    
+    place-items:center;
+    background: $bg-color;
+
+    h1{
+        @include commoncode(0.8rem,uppercase);
+        
+        &:hover{
+            color:rgb(201, 198, 198);
+        }
+        &::after{
+            content:"Channel "
+        }
+    }
+    
+    p{
+        @include commoncode(0.3 rem,capitalize);
+        
+        &:hover{
+            color:rgb(201, 198, 198);
+        }
+    }
+    
+}
